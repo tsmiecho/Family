@@ -28,7 +28,7 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}" p:username="${jdbc.username}" p:password="${jdbc.password}" />
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
@@ -49,6 +49,7 @@
 
     <bean id="jpaAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
 		p:database="${jpa.database}" p:showSql="${jpa.showSql}" />
+		
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<mvc:annotation-driven />

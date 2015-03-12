@@ -1,4 +1,4 @@
-package com.tsmiecho.family;
+package com.tsmiecho.family.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -13,17 +13,9 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getWelcome() {
-
-		//logs debug message
-		if(logger.isDebugEnabled()){
-			logger.debug("getWelcome is executed!");
-		}
-		
-		//logs exception
-		logger.error("This is Error message", new Exception("Testing"));
 		
 		ModelAndView model = new ModelAndView("welcome");
-		model.addObject("msg", "Hello Spring MVC + Log4j");
+		model.addObject("msg", "Hello again");
 		return model;
 
 	}

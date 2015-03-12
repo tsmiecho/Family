@@ -1,12 +1,8 @@
 package com.tsmiecho.family.pojo;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -18,6 +14,8 @@ public class Adress {
 	@GeneratedValue
 	private Long id;
 	
+	private String country;
+	
 	private String city;
 	
 	private String street;
@@ -26,10 +24,6 @@ public class Adress {
 	
 	private int flatNumber;
 	
-	@OneToMany
-	@JoinColumn(name = "birthAdress")
-	private Set<Person> persons;
-
 	public Long getId() {
 		return id;
 	}
@@ -70,12 +64,12 @@ public class Adress {
 		this.flatNumber = flatNumber;
 	}
 
-	public Set<Person> getPersons() {
-		return persons;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setPersons(Set<Person> persons) {
-		this.persons = persons;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 }

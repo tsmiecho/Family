@@ -24,12 +24,13 @@ public class Person {
 	private String surname;
 	
 	@ManyToOne
-	@JoinColumn(name = "persons")
 	private Adress birthAdress;
 	
 	private Date dateOfBirth;
 	
 	private Date dateOfDeath;
+	
+	private boolean isAlive;
 	
 	@ManyToMany
 	@JoinColumn(name = "children")
@@ -101,6 +102,14 @@ public class Person {
 
 	public void setDateOfDeath(Date dateOfDeath) {
 		this.dateOfDeath = dateOfDeath;
+	}
+
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
 	}
 
 	
